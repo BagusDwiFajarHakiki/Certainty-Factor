@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pakar Seleksi Bibit Puyuh - Certainty Factor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- FontAwesome for standard icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <ion-icon name="leaf"></ion-icon>
+                <span>BioSelect Quail</span>
+            </div>
+            <nav>
+                <!-- Optional Nav -->
+            </nav>
+        </header>
+
+        <!-- LANDING PAGE -->
+        <section id="landing" class="section active landing-container-wide">
+            
+            <div class="landing-main-card">
+                <h1 class="hero-title">
+                    Sistem Pakar Seleksi Indukan Puyuh
+                </h1>
+                <p class="hero-subtitle mb-5">
+                    Metode Certainty Factor
+                </p>
+
+                <!-- Expert Profile (Left Text, Right Image) -->
+                <div class="expert-section mb-5">
+                    <div class="expert-text">
+                        <h3>Profil Pakar</h3>
+                        <h4 class="expert-name">[Nama Pakar]</h4>
+                        <p class="text-muted mb-3">Lahir di [Tempat], [Tanggal Lahir]</p>
+                        <p class="expert-bio">
+                            Beliau adalah seorang praktisi senior dengan pengalaman lebih dari satu dekade di industri peternakan puyuh. <br><br>
+                            Melalui dedikasinya dalam riset genetik dan penerapan biosecurity, beliau telah berhasil mengembangkan metode seleksi indukan yang presisi, membantu ratusan peternak lokal meningkatkan produktivitas telur dan kualitas daging puyuh mereka secara signifikan.
+                        </p>
+                    </div>
+                    <div class="expert-image-wrapper">
+                        <img src="images/img-main.png" alt="Foto Pakar" class="expert-img">
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button id="startBtn" class="btn btn-primary pulse-animation mb-5" style="padding: 18px 50px; font-size: 1.2rem;">
+                        Mulai Analisa
+                    </button>
+                </div>
+
+                <!-- Business Profile (Zig Zag) -->
+                <div class="business-section">
+                    <h3 class="section-heading mb-4">Profil Usaha "Puyuh Berkah Farm"</h3>
+                    
+                    <div class="feature-row">
+                        <div class="feature-image">
+                            <img src="images/img-1.jpeg" alt="Fasilitas Kandang">
+                        </div>
+                        <div class="feature-text">
+                            <h4>Fasilitas Modern & Higienis</h4>
+                            <p>Kami menggunakan sistem kandang baterai modern yang dirancang untuk memaksimalkan sirkulasi udara dan kemudahan sanitasi. Kebersihan kandang dijaga ketat setiap hari untuk mencegah penyakit dan stress pada puyuh.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-row">
+                        <div class="feature-image">
+                            <img src="images/img-2.jpeg" alt="Manajemen Pakan">
+                        </div>
+                        <div class="feature-text">
+                            <h4>Nutrisi & Pakan Berkualitas</h4>
+                            <p>Puyuh kami diberikan pakan dengan formulasi khusus yang kaya protein dan vitamin. Manajemen pakan yang terukur memastikan pertumbuhan optimal dan kualitas telur yang konsisten sepanjang tahun.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-row">
+                        <div class="feature-image">
+                            <img src="images/img-3.jpeg" alt="Seleksi Ketat">
+                        </div>
+                        <div class="feature-text">
+                            <h4>Proses Seleksi Ketat</h4>
+                            <p>Setiap bibit (DOQ) dan indukan melewati proses seleksi fisik yang ketat menggunakan metode expert system ini. Kami hanya memilih puyuh dengan postur, vitalitas, dan genetik terbaik untuk dikembangbiakkan.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-row">
+                        <div class="feature-image">
+                            <img src="images/img-4.jpeg" alt="Produk Unggulan">
+                        </div>
+                        <div class="feature-text">
+                            <h4>Produk Hasil Unggulan</h4>
+                            <p>Hasil akhir dari peternakan kami adalah telur puyuh yang padat nutrisi dan daging puyuh yang empuk serta sehat. Kepuasan pelanggan dan keberhasilan peternak mitra adalah prioritas utama kami.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TEST PAGE -->
+        <section id="test" class="section" style="display: none;">
+            <div class="section-header">
+                <h2>Analisa Karakteristik</h2>
+                <p>Silahkan pilih tingkat keyakinan Anda terhadap ciri-ciri berikut.</p>
+            </div>
+
+            <form id="diagnosisForm">
+                <div id="symptomsContainer" class="symptom-list">
+                    <!-- Dynamic Content -->
+                </div>
+
+                <div class="action-bar">
+                    <button type="submit" class="btn btn-primary">Lihat Hasil</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- RESULT PAGE -->
+        <section id="result" class="section" style="display: none;">
+            <div class="card result-card">
+                <h2>Hasil Diagnosa</h2>
+                <div id="mainResult">
+                    <!-- Main Result Content -->
+                </div>
+                
+                <div class="chart-container" style="margin-top: 2rem;">
+                    <canvas id="resultChart"></canvas>
+                </div>
+
+                <!-- Action Buttons for Modals -->
+                <div class="action-buttons-container" style="display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
+                    <button id="showRulesBtn" class="btn btn-secondary">
+                        <i class="fas fa-book-open"></i> Lihat Aturan Pakar
+                    </button>
+                    <button id="showCalcBtn" class="btn btn-secondary">
+                        <i class="fas fa-calculator"></i> Lihat Hasil Perhitungan
+                    </button>
+                </div>
+                
+                <div style="margin-top: 20px;"></div>
+                
+                <button id="restartBtn" class="btn btn-primary mt-2">
+                    <i class="fas fa-redo"></i> Diagnosa Ulang
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- MODALS -->
+    
+    <!-- Rules Modal -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Aturan Pakar (Knowledge Base)</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div id="rulesTableContainer" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Calculation Modal -->
+    <div id="calcModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Detail Perhitungan (White Box)</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="logContainer" class="log-container">
+                    <pre id="logContent"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
