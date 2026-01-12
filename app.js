@@ -66,6 +66,13 @@ showCalcBtn.addEventListener('click', () => {
     calcModal.style.display = 'block';
 });
 
+document.getElementById('printBtn').addEventListener('click', () => {
+    // Set date for print signature
+    const date = new Date().toLocaleString('id-ID', { dateStyle: 'full', timeStyle: 'short' });
+    document.getElementById('result').setAttribute('data-date', date);
+    window.print();
+});
+
 closeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         rulesModal.style.display = 'none';

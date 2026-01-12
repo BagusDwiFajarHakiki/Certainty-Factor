@@ -829,3 +829,94 @@ header {
     padding: 20px;
   }
 }
+
+/* PRINT STYLES */
+@media print {
+    /* Hide Navigation, Buttons, Forms, Inputs */
+    header, 
+    nav, 
+    .action-buttons-container,
+    .action-bar, 
+    #restartBtn,
+    #startBtn,
+    .btn,
+    .close-modal,
+    #rulesModal,
+    #calcModal,
+    #test, 
+    #landing {
+        display: none !important;
+    }
+
+    /* Reset Body */
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        font-family: serif; /* Better reading for print */
+        color: black;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Result Card Modifications for Print */
+    #result {
+        display: block !important; /* Force show result */
+        margin: 0;
+        padding: 0;
+    }
+
+    .result-card {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .result-card h2 {
+        font-size: 24pt;
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        color: black;
+    }
+
+    .score-circle {
+        border: 2px solid #333;
+        color: #000;
+        /* Keep it circular but maybe smaller border */
+    }
+
+    .result-title {
+        font-size: 20pt;
+        color: black;
+        margin-top: 10px;
+    }
+
+    .result-desc {
+        font-size: 12pt;
+        line-height: 1.6;
+        color: black;
+        text-align: justify;
+    }
+
+    /* Print Signature / Footer */
+    #result::after {
+        content: "Laporan Hasil Diagnosa - BioSelect Quail System\A Dicetak pada: " attr(data-date);
+        white-space: pre;
+        display: block;
+        margin-top: 50px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        font-size: 10pt;
+        text-align: center;
+        color: #555;
+    }
+}
