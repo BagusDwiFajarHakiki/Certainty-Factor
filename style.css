@@ -794,4 +794,9 @@ header {
     display: block;
     width: 100%;
   }
+
+  /* Adjust unified card padding on mobile */
+  .landing-main-card {
+    padding: 20px;
+  }
 }
