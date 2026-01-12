@@ -18,6 +18,11 @@ let resultChart = null;
 
 // Initialize System
 const cfSystem = new CertaintyFactorSystem(RULES, HYPOTHESES);
+// Make sure landing page starts with desktop view
+if (window.innerWidth < 1024) {
+    // Only apply if starting on mobile/small screen to avoid weird jumps on actual desktop
+    // But since logic is meta-tag based, just ensuring consistency
+}
 
 // Confidence Levels for User Input
 const CONFIDENCE_LEVELS = [
@@ -78,13 +83,36 @@ window.addEventListener('click', (event) => {
 });
 
 
+
 // Functions
+function updateViewport(isDesktop) {
+    const metaViewport = document.querySelector('meta[name="viewport"]');
+    if (isDesktop) {
+        // Force Desktop Width (scaled down)
+        metaViewport.setAttribute('content', 'width=1200, initial-scale=0.1');
+    } else {
+        // Standard Responsive
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    }
+}
+
 function switchSection(from, to) {
     from.style.display = 'none';
     to.style.display = 'block';
-    // Scroll to top
+    
+    // Default scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Dynamic Viewport Logic
+    if (to === landingSection) {
+        updateViewport(true);
+    } else {
+        updateViewport(false);
+    }
 }
+
+// Init Viewport for Landing Page (Default)
+updateViewport(true);
 
 function renderSymptoms() {
     if (symptomsContainer.children.length > 0) return; // Prevent re-rendering
@@ -204,6 +232,9 @@ function renderResults(results, inputs) {
             
             // Append to description
             dynamicDescription += ` ${traitsText}.`;
+        } else {
+            // Fallback if no specific traits with high confidence
+            dynamicDescription += ` berdasarkan kombinasi gejala fisik yang terpantau.`;
         }
     }
 
