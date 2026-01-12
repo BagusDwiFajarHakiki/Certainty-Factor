@@ -93,7 +93,7 @@ function updateViewport(isDesktop) {
         metaViewport.setAttribute('content', 'width=800, initial-scale=0.1');
     } else {
         // Standard Responsive
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        metaViewport.setAttribute('content', 'width=800, initial-scale=1.0');
     }
 }
 
