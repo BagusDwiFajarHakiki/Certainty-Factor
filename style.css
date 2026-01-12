@@ -114,7 +114,8 @@ header {
 
 .landing-main-card {
   background: white;
-  padding: 50px;
+  /* Reduced padding to maximize space on mobile */
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }

@@ -88,8 +88,9 @@ window.addEventListener('click', (event) => {
 function updateViewport(isDesktop) {
     const metaViewport = document.querySelector('meta[name="viewport"]');
     if (isDesktop) {
-        // Force Desktop Width (scaled down)
-        metaViewport.setAttribute('content', 'width=1200, initial-scale=0.1');
+        // Force Desktop Width (scaled down but readable)
+        // 800px is just above 768px breakpoint, keeping desktop layout but larger text
+        metaViewport.setAttribute('content', 'width=800, initial-scale=0.1');
     } else {
         // Standard Responsive
         metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
