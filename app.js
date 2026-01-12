@@ -85,37 +85,13 @@ window.addEventListener('click', (event) => {
 
 
 // Functions
-function updateViewport(isDesktop) {
-    const metaViewport = document.querySelector('meta[name="viewport"]');
-    if (isDesktop) {
-        // Force Desktop Width (scaled down but readable)
-        // 980px is the sweet spot: Large enough for desktop layout, small enough for big text on mobile
-        metaViewport.setAttribute('content', 'width=980, initial-scale=0.1'); 
-        document.body.classList.add('force-desktop');
-    } else {
-        // Standard Responsive
-        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-        document.body.classList.remove('force-desktop');
-    }
-}
-
 function switchSection(from, to) {
     from.style.display = 'none';
     to.style.display = 'block';
     
     // Default scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Dynamic Viewport Logic
-    if (to === landingSection) {
-        updateViewport(true);
-    } else {
-        updateViewport(false);
-    }
 }
-
-// Init Viewport for Landing Page (Default)
-updateViewport(true);
 
 function renderSymptoms() {
     if (symptomsContainer.children.length > 0) return; // Prevent re-rendering
