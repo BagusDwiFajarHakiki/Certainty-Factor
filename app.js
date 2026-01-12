@@ -89,11 +89,13 @@ function updateViewport(isDesktop) {
     const metaViewport = document.querySelector('meta[name="viewport"]');
     if (isDesktop) {
         // Force Desktop Width (scaled down but readable)
-        // 800px is just above 768px breakpoint, keeping desktop layout but larger text
-        metaViewport.setAttribute('content', 'width=800, initial-scale=0.1');
+        // 980px is the sweet spot: Large enough for desktop layout, small enough for big text on mobile
+        metaViewport.setAttribute('content', 'width=980, initial-scale=0.1'); 
+        document.body.classList.add('force-desktop');
     } else {
         // Standard Responsive
-        metaViewport.setAttribute('content', 'width=800, initial-scale=1.0');
+        metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        document.body.classList.remove('force-desktop');
     }
 }
 

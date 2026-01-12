@@ -11,7 +11,37 @@
   --error: #d32f2f;
   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Close :root properly */
   --radius: 12px;
+}
+
+/* Typography Boost for Mobile Desktop View */
+.force-desktop body {
+  font-size: 18px; /* Base boost */
+}
+.force-desktop .landing-container-wide {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.force-desktop .landing-main-card {
+  padding: 15px; /* Minimal padding */
+}
+.force-desktop .hero-title {
+  font-size: 3.5rem; /* Larger Title */
+}
+.force-desktop .expert-bio,
+.force-desktop .feature-text p,
+.force-desktop .btn {
+  font-size: 1.2rem; /* Readable paragraph text */
+}
+/* Ensure layout stays desktop-like (flex) even near breakpoints */
+.force-desktop .expert-section,
+.force-desktop .feature-row {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+.force-desktop .feature-row:nth-child(even) {
+  flex-direction: row-reverse !important;
 }
 
 * {
