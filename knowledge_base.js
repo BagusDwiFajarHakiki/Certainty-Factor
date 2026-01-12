@@ -8,47 +8,56 @@ export const SYMPTOMS = [
     { 
         id: 'K01', 
         name: 'Apakah sorot mata burung puyuh terlihat cerah, bening, dan tidak sayu?',
-        trait: 'memiliki sorot mata yang cerah dan bening'
+        trait: 'memiliki sorot mata yang cerah dan bening',
+        image: 'images/soal-1.png'
     },
     { 
         id: 'K02', 
         name: 'Apakah gerakan burung puyuh lincah, aktif, dan responsif terhadap kejutan?',
-        trait: 'gerakannya lincah dan sangat responsif'
+        trait: 'gerakannya lincah dan sangat responsif',
+        image: 'images/soal-2.png'
     },
     { 
         id: 'K03', 
         name: 'Apakah bulu puyuh terlihat halus, mengkilap, dan tersusun rapi (tidak kusam)?',
-        trait: 'bulunya halus, mengkilap, dan rapi'
+        trait: 'bulunya halus, mengkilap, dan rapi',
+        image: 'images/soal-3.png'
     },
     { 
         id: 'K04', 
         name: 'Apakah jarak tulang pubis (supit urang) di dekat kloaka terasa lebar (bisa masuk 2-3 jari) dan elastis?',
-        trait: 'memiliki tulang pubis yang lebar dan elastis'
+        trait: 'memiliki tulang pubis yang lebar dan elastis',
+        image: 'images/soal-4.png'
     },
     { 
         id: 'K05', 
         name: 'Apakah bentuk dada terlihat lebar, berisi, dan menonjol (berdaging tebal)?',
-        trait: 'bagian dada terlihat lebar dan berisi'
+        trait: 'bagian dada terlihat lebar dan berisi',
+        image: 'images/soal-5.png'
     },
     { 
         id: 'K06', 
         name: 'Apakah postur tubuh terlihat besar dan berat badannya di atas 170 gram (terlihat gemuk/berlemak)?',
-        trait: 'postur tubuhnya besar dengan bobot signifikan'
+        trait: 'postur tubuhnya besar dengan bobot signifikan',
+        image: 'images/soal-6.png'
     },
     { 
         id: 'K07', 
         name: 'Apakah bentuk perut terasa lunak dan halus saat diraba (tidak keras/bengkak)?',
-        trait: 'perutnya terasa lunak dan halus'
+        trait: 'perutnya terasa lunak dan halus',
+        image: 'images/soal-7.png'
     },
     { 
         id: 'K08', 
         name: 'Apakah sayap terlihat menggantung lemah dan puyuh sering memejamkan mata (mengantuk)?',
-        trait: 'sayapnya tampak menggantung lemah'
+        trait: 'sayapnya tampak menggantung lemah',
+        image: 'images/soal-8.png'
     },
     { 
         id: 'K09', 
         name: 'Apakah area kloaka (dubur) terlihat kotor, basah, atau berkerak putih/hijau?',
-        trait: 'area kloaka terlihat kotor atau tidak normal'
+        trait: 'area kloaka terlihat kotor atau tidak normal',
+        image: 'images/soal-9.png'
     }
 ];
 

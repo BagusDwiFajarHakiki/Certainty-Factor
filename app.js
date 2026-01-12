@@ -100,6 +100,24 @@ function renderSymptoms() {
         const card = document.createElement('div');
         card.className = 'symptom-card';
 
+        // Add Image Slot (Default to 'images/panduan.jpg' or symptom specific if available)
+        // Since user said "1 image containing good and bad", we use a common guide image for now.
+        // Users can replace 'images/panduan.jpg' with their file.
+        const imgContainer = document.createElement('div');
+        imgContainer.className = 'symptom-image';
+        
+        const img = document.createElement('img');
+        // Prefer specific image if defined, else default
+        img.src = symptom.image || 'images/panduan.jpg'; 
+        img.alt = `Visual ${symptom.name}`;
+        img.onerror = function() {
+            this.style.display = 'none'; // Hide if image not found
+            imgContainer.style.display = 'none';
+        }
+        
+        imgContainer.appendChild(img);
+        card.appendChild(imgContainer);
+
         const label = document.createElement('label');
         label.className = 'symptom-name';
         label.textContent = symptom.name;
